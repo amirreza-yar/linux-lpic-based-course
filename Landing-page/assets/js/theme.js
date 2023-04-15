@@ -557,11 +557,11 @@ var bgPlayerInit = function bgPlayerInit() {
       });
     }
 
-    var tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    tag.onload = setupPlayer;
+    // var tag = document.createElement('script');
+    // tag.src = 'https://www.youtube.com/iframe_api';
+    // var firstScriptTag = document.getElementsByTagName('script')[0];
+    // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    // tag.onload = setupPlayer;
   };
 
   if (document.readyState !== Events.LOADING) {
@@ -632,30 +632,30 @@ var bootstrapNavbarInit = function bootstrapNavbarInit() {
 --------------------------------------------------------------------------- */
 
 
-var countdownInit = function countdownInit() {
-  var countdownElements = document.querySelectorAll('[data-countdown]');
-  countdownElements.forEach(function (el) {
-    var countdownElement = el;
-    var userOptions = utils.getData(countdownElement, 'countdown');
-    var countDownDate = new Date("".concat(userOptions === null || userOptions === void 0 ? void 0 : userOptions.month, " ", "".concat(userOptions === null || userOptions === void 0 ? void 0 : userOptions.date, ","), " ").concat(userOptions.year)).getTime(); // Update the count down every 1 second
+// var countdownInit = function countdownInit() {
+//   var countdownElements = document.querySelectorAll('[data-countdown]');
+//   countdownElements.forEach(function (el) {
+//     var countdownElement = el;
+//     var userOptions = utils.getData(countdownElement, 'countdown');
+//     var countDownDate = new Date("".concat(userOptions === null || userOptions === void 0 ? void 0 : userOptions.month, " ", "".concat(userOptions === null || userOptions === void 0 ? void 0 : userOptions.date, ","), " ").concat(userOptions.year)).getTime(); // Update the count down every 1 second
 
-    var updateCountdown = setInterval(function () {
-      var currentTime = new Date().getTime();
-      var distance = countDownDate - currentTime; // Time calculations for days, hours, minutes and seconds
+//     var updateCountdown = setInterval(function () {
+//       var currentTime = new Date().getTime();
+//       var distance = countDownDate - currentTime; // Time calculations for days, hours, minutes and seconds
 
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor(distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
-      var minutes = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
-      var seconds = Math.floor(distance % (1000 * 60) / 1000);
-      countdownElement.innerHTML = "".concat(days, " days ").concat("0".concat(hours).toString().slice(-2), ":").concat("0".concat(minutes).toString().slice(-2), ":").concat("0".concat(seconds).toString().slice(-2)); // If the count down is over, write some text
+//       var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+//       var hours = Math.floor(distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+//       var minutes = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
+//       var seconds = Math.floor(distance % (1000 * 60) / 1000);
+//       countdownElement.innerHTML = "".concat(days, " روز و ").concat("0".concat(hours).toString().slice(-2), ":").concat("0".concat(minutes).toString().slice(-2), ":").concat("0".concat(seconds).toString().slice(-2));
 
-      if (distance < 0) {
-        clearInterval(updateCountdown);
-        countdownElement.innerHTML = 'EXPIRED';
-      }
-    }, 10);
-  });
-};
+//       if (distance < 0) {
+//         clearInterval(updateCountdown);
+//         countdownElement.innerHTML = 'EXPIRED';
+//       }
+//     }, 10);
+//   });
+// };
 /* -------------------------------------------------------------------------- */
 
 /*                                  Count Up                                  */
