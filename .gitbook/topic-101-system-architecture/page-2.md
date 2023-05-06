@@ -1,10 +1,10 @@
-# 101.3. Change runlevels / boot targets and shutdown or reboot system
+# 101.2 Boot the system
 
 ## **101.3 Change runlevels / boot targets and shutdown or reboot system**
 
-**Weight:**3
+**Weight: **_**3**_
 
-**Description:** Candidates should be able to manage the SysVinit runlevel or systemd boot target of the system. This objective includes changing to single user mode, shutdown or rebooting the system. Candidates should be able to alert users before switching runlevels / boot targets and properly terminate processes. This objective also includes setting the default SysVinit runlevel or systemd boot target. It also includes awareness of Upstart as an alternative to SysVinit or systemd.
+**Description: **_**Candidates should be able to manage the SysVinit runlevel or systemd boot target of the system. This objective includes changing to single user mode, shutdown or rebooting the system. Candidates should be able to alert users before switching runlevels / boot targets and properly terminate processes. This objective also includes setting the default SysVinit runlevel or systemd boot target. It also includes awareness of Upstart as an alternative to SysVinit or systemd.**_
 
 **Key Knowledge Areas:**
 
@@ -93,7 +93,7 @@ root@amirreza:/# init 3
 ```
 
 {% hint style="info" %}
-#### telinit vs init
+**telinit vs init**
 
 telinit is a smaller tool that informs init when it needs to switch runlevels. So we can use "telinit" to "tell init" that it needs to switch runlevel. telinit is actually linked to init command and it is possible to use init command instead but it is not recommanded.
 
@@ -215,7 +215,7 @@ As we said, in SysV, init program is the first process that is run and consequen
 
 ### /etc/rc.d/
 
-SysV uses grouping. **Scripts of each runlevel are grouped and placed in /etc/rc{runlevel}.d/** where runlevel is the runlevel. 
+SysV uses grouping. **Scripts of each runlevel are grouped and placed in /etc/rc{runlevel}.d/** where runlevel is the runlevel.
 
 As many services might be existed in different runlevels, the real script files are hold in /etc/init.d and /etc/rc{runlevel}.d/just point to required ones.
 
@@ -272,7 +272,7 @@ lrwxrwxrwx 1 root root 19 Aug 26 23:21 S15mdmonitor -> ../init.d/mdmonitor
 <output has been truncated>
 ```
 
-Each script in each runlevel is run with its startup or shutdown functions depending on if that runlevel is going up or going down.** S** means **starting** script and **K** shows that it is a **killing** script .The sequence of actions is defined by the numbers. try cat command to see what is inside :
+Each script in each runlevel is run with its startup or shutdown functions depending on if that runlevel is going up or going down.\*\* S\*\* means **starting** script and **K** shows that it is a **killing** script .The sequence of actions is defined by the numbers. try cat command to see what is inside :
 
 ```
 [root@centos5-1 rc5.d]# cat S55sshd
@@ -473,7 +473,7 @@ Lets go back to our topic and get familiar with runlevels equivalent in systemd.
 
 ### systemd targets
 
-Like runlevels there are some modes in systemd system that our system can run in, systemd runlevels are referred to as "**targets**". "**targets**" **are described as a collection of services**. Look at the equivalents:** **
+Like runlevels there are some modes in systemd system that our system can run in, systemd runlevels are referred to as "**targets**". "**targets**" **are described as a collection of services**. Look at the equivalents:\*\* \*\*
 
 ```
    ┌─────────┬───────────────────┐
@@ -530,9 +530,9 @@ There are different types of unit files and the best way to describe unit files,
 
 Unit files can be stored in a few different places on your system. systemd looks for system unit files in this order:
 
-1. **/etc/systemd/system:**directory stores unit files that extend a service. This directory will take precedence over unit files located anywhere else in the system.
-2. **/run/systemd/system:**directory is the runtime location for unit files.
-3. **/usr/lib/systemd/system:**directory is the default location where unit files are installed by packages. Unit files in the default directory should not be altered.
+1. \*\*/etc/systemd/system:\*\*directory stores unit files that extend a service. This directory will take precedence over unit files located anywhere else in the system.
+2. \*\*/run/systemd/system:\*\*directory is the runtime location for unit files.
+3. \*\*/usr/lib/systemd/system:\*\*directory is the default location where unit files are installed by packages. Unit files in the default directory should not be altered.
 
 **Unit files in the earlier directories override later ones.** Lets take a look at them:
 
@@ -566,7 +566,7 @@ drwxr-xr-x. 2 root root   44 Oct 28  2017 system-update.target.wants
 drwxr-xr-x. 2 root root   29 Oct 28  2017 vmtoolsd.service.requires
 ```
 
-### 2./run/systemd/system 
+### 2./run/systemd/system
 
 ```
 [root@centos7-1 ~]# ls -l /run/systemd/system/
@@ -667,7 +667,7 @@ After=basic.target rescue.service rescue.target
 AllowIsolate=yes
 ```
 
-and it requires _basic.target _:
+and it requires \_basic.target \_:
 
 ```
 [root@centos7-1 ~]# cat  /usr/lib/systemd/system/basic.target
@@ -713,7 +713,7 @@ Using unit files beside Targets concept make Systemd more flexible in comparison
 
 ## wall
 
-There are times when multiple users are logged in to a server computer, and we need to, say, restart the server to perform some maintenance task. Of course, the **correct way is to inform all **those who are logged in about the maintenance activity.
+There are times when multiple users are logged in to a server computer, and we need to, say, restart the server to perform some maintenance task. Of course, the \*\*correct way is to inform all \*\*those who are logged in about the maintenance activity.
 
 wall (an abbreviation of write to all) is a Unix command-line utility that displays the contents of a file or standard input to all logged-in users. It is typically used by root to send out shutting down message to all users just before poweroff.(Ubuntu16)
 
@@ -830,7 +830,7 @@ root@ubuntu16-1:~# shutdown -c
 ####
 
 {% hint style="info" %}
-#### halt vs poweroff ! it's a bit historical
+**halt vs poweroff ! it's a bit historical**
 
 * halt was used before ACPI (Advanced Configuration and Power Interface)which today will turn off the power for us. It would halt the system and then print a message to the effect of "it's ok to power off now". Back then there were physical on/off switches, rather than the combo ACPI controlled power button of modern computers.
 * poweroff, naturally will halt the system and then call ACPI power off.
@@ -918,8 +918,6 @@ and we are done.
 
 .
 
-
-
 Sources:
 
 [https://www.linuxjournal.com/article/1274](https://www.linuxjournal.com/article/1274)
@@ -930,7 +928,7 @@ Sources:
 
 [https://www.ostechnix.com/check-runlevel-linux/](https://www.ostechnix.com/check-runlevel-linux/)
 
-[https://geek-university.com/linux/etc-inittab/](https://geek-university.com/linux/etc-inittab/)``[https://developer.ibm.com/tutorials/l-lpic1-101-3/](https://developer.ibm.com/tutorials/l-lpic1-101-3/)
+[https://geek-university.com/linux/etc-inittab/](https://geek-university.com/linux/etc-inittab/)\`\`[https://developer.ibm.com/tutorials/l-lpic1-101-3/](https://developer.ibm.com/tutorials/l-lpic1-101-3/)
 
 [https://www.liquidweb.com/kb/linux-runlevels-explained/](https://www.liquidweb.com/kb/linux-runlevels-explained/)
 
@@ -950,11 +948,11 @@ Sources:
 
 [https://www.howtoforge.com/linux-wall-command/](https://www.howtoforge.com/linux-wall-command/)
 
-[https://en.wikipedia.org/wiki/Wall\_(Unix)](https://en.wikipedia.org/wiki/Wall_\(Unix\))
+[https://en.wikipedia.org/wiki/Wall\_(Unix)](https://en.wikipedia.org/wiki/Wall\_\(Unix\))
 
 [http://man7.org/linux/man-pages/man1/wall.1.html](http://man7.org/linux/man-pages/man1/wall.1.html)
 
-[http://man7.org/linux/man-pages/man8/shutdown.8.html](https://legacy.gitbook.com/book/borosan/lpic1-exam-guide/edit#)
+[http://man7.org/linux/man-pages/man8/shutdown.8.html](https://legacy.gitbook.com/book/borosan/lpic1-exam-guide/edit)
 
 [https://www.computerhope.com/unix/ushutdow.htm](https://www.computerhope.com/unix/ushutdow.htm)
 
