@@ -2,4 +2,4 @@
 
 * [Introduction](README.md)
 * [Topic 101: System Architecture](topic-101-system-architecture/README.md)
-  * [Page 1](topic-101-system-architecture/page-1.md)
+  * [101.1 Determine and configure hardware settings](topic-101-system-architecture/101.1-determine-and-configure-hardware-settings.md)
