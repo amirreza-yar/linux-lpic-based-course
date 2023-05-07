@@ -1,6 +1,4 @@
-# 101.2 Boot the system
-
-## **101.3 Change runlevels / boot targets and shutdown or reboot system**
+# 101.3 Change runlevels / boot targets and shutdown or reboot system
 
 **Weight: **_**3**_
 

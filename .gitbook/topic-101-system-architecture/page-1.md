@@ -1,7 +1,5 @@
 # 101.2 Boot the system
 
-### 101.2.Boot the system
-
 **Weight: **_**3**_
 
 **Description: **_**Candidates should be able to guide the system through the booting process.**_
