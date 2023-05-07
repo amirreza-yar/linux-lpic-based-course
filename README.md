@@ -6,4 +6,7 @@ This guide covers all the topics in the LPIC-1 exam objectives, including system
 
 #### About us
 
-Our team of experienced Linux professionals and LPI trainers has designed this guide to provide a comprehensive and up-to-date resource for LPIC-1 exam preparation. We are committed to helping aspiring Linux professionals achieve their career goals by providing the knowledge and skills necessary to pass the LPIC-1 certification exam.
+Our team of experienced Linux professionals and LPI trainers has designed this guide to provide a comprehensive and up-to-date resource for LPIC-1 exam preparation. We are committed to helping aspiring Linux professionals achieve their career goals by providing the knowledge and skills necessary to pass the LPIC-1 certification exam. The envolves [Amirreza Yarahmadi](https://github.com/amirreza-yar) and [Alireza Askari](https://www.linkedin.com/in/alireza-askari-6ba91a264).
+
+Link to course landing-page: https://amirreza-yar.github.io/linux-lpic-based-course/
+Contact us: [@Amirrz_yar](https://t.me/Amirrz_yar)
